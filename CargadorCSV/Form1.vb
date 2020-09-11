@@ -14,16 +14,23 @@
             Using archivo As New Microsoft.VisualBasic.
                       FileIO.TextFieldParser(
                         txtRuta.Text)
+
                 archivo.TextFieldType = FileIO.FieldType.Delimited
                 archivo.SetDelimiters(",")
                 Dim currentRow As String()
                 While Not archivo.EndOfData
                     Try
                         currentRow = archivo.ReadFields()
-                        Dim currentField As String
                         Dim linea As String() = currentRow.ToArray()
-                        MsgBox(linea(1) + " " + linea(2) + " " + linea(3))
-
+                        MsgBox(
+                                   "Nombre: " + linea(1) +
+                                   Environment.NewLine +
+                                   "Apellido: " + linea(2) +
+                                   Environment.NewLine +
+                                   "Email: " + linea(3) +
+                                   Environment.NewLine +
+                                   "Sexo: " + linea(4)
+                               )
                     Catch ex As Microsoft.VisualBasic.
                                 FileIO.MalformedLineException
                         MsgBox("Line " & ex.Message &
