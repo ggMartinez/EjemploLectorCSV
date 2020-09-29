@@ -23,13 +23,13 @@
                         currentRow = archivo.ReadFields()
                         Dim linea As String() = currentRow.ToArray()
                         MsgBox(
-                                   "Nombre: " + linea(1) +
+                                   "Nombre: " + linea(0) +
                                    Environment.NewLine +
-                                   "Apellido: " + linea(2) +
+                                   "Apellido: " + linea(1) +
                                    Environment.NewLine +
-                                   "Email: " + linea(3) +
+                                   "Email: " + linea(2) +
                                    Environment.NewLine +
-                                   "Sexo: " + linea(4)
+                                   "Sexo: " + linea(3)
                                )
                     Catch ex As Microsoft.VisualBasic.
                                 FileIO.MalformedLineException
